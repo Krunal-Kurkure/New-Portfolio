@@ -1,15 +1,18 @@
 /* styles.css */
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   margin: 0;
-  background-color: #121212;
+  background-color: rgb(8, 8, 8);
   color: #ffffff;
 }
 
 .home {
-  max-width: 100vw;
-  max-height: 100vh;
+  min-height: 100vh;
+  background-color: rgb(8, 8, 8);
 }
-
 nav {
   background-color: #333;
   padding: 20px 0;
@@ -35,9 +38,8 @@ nav ul li a {
   font-family: "IBM Plex Mono", monospace;
 }
 
-
 nav ul li a:hover {
-color: white;
+  color: white;
 }
 @media (max-width: 700px) {
   nav {
@@ -52,7 +54,6 @@ color: white;
 }
 
 .mainhome {
-  width: 100vw;
   margin-top: 40px;
   display: flex;
 
@@ -158,6 +159,7 @@ color: white;
 @media (max-width: 700px) {
   .mainhome {
     margin-top: 35px;
+
     flex-direction: column-reverse;
   }
 
@@ -199,7 +201,7 @@ color: white;
     flex-wrap: wrap;
   }
   #Link1 {
-    margin: 10px;
+    margin: 10px 5px;
   }
   .mainlinks h5 {
     display: block;
@@ -209,5 +211,116 @@ color: white;
   }
   br {
     display: none;
+  }
+}
+@media (max-width: 365px) {
+  .Linkss {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.about {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+.about h1 {
+  padding: 20px 40px;
+  color: black;
+  text-align: center;
+  font-size: 34px;
+  font-family: "Raleway", sans-serif;
+}
+#maintext {
+  text-align: center;
+  color: #333;
+  font-size: 12px;
+  width: 55vw;
+  font-family: "IBM Plex Mono", monospace;
+  margin: auto;
+  display: block;
+}
+.education1 {
+  width: auto;
+  margin: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
+.education1 #edu1 h6 {
+  font-family: "Raleway", sans-serif;
+  width: max-content;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  background-color: #fee8c7;
+  color: #ff9900;
+}
+.education1 #edu1 h2 {
+  color: #080808;
+  font-family: "Raleway", sans-serif;
+  margin: 5px 0px;
+}
+.education1 #edu1 p {
+  font-family: "IBM Plex Mono", monospace;
+  color: #333;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+#edu2 img {
+  width: auto;
+  height: 200px;
+}
+@media (max-width: 700px) {
+  #edu2 img {
+    display: none;
+  }
+  #maintext {
+    width: 75vw;
+  }
+  .education1 {
+    margin: 40px 40px 80px;
+  }
+}
+
+.education2 {
+  width: auto;
+  margin: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
+.education2 #edu1 h6 {
+  font-family: "Raleway", sans-serif;
+  width: max-content;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  background-color: #D0E6FF;
+  color: #000AFF;
+}
+.education2 #edu1 h2 {
+  color: #080808;
+  font-family: "Raleway", sans-serif;
+  margin: 15px 0px;
+}
+.education2 #edu1 p {
+  font-family: "IBM Plex Mono", monospace;
+  color: #333;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+  #edu2 img {
+    display: none;
+  }
+  #maintext {
+    width: 75vw;
+  }
+  .education2 {
+    margin: 40px;
   }
 }
