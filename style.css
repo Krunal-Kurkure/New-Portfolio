@@ -281,7 +281,8 @@ nav ul li a:hover {
     width: 75vw;
   }
   .education1 {
-    margin: 40px 40px 80px;
+    margin: 40px 40px;
+    height: fit-content;
   }
 }
 
@@ -292,6 +293,7 @@ nav ul li a:hover {
   justify-content: space-between;
   height: 200px;
 }
+
 .education2 #edu1 h6 {
   font-family: "Raleway", sans-serif;
   width: max-content;
@@ -322,5 +324,6 @@ nav ul li a:hover {
   }
   .education2 {
     margin: 40px;
+    height: fit-content;
   }
 }
