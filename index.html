@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- ----------------------------------- IBM font ------------------------------------  -->
+  <!-- ----------------------------------- IBM font ------------------------------------ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,10 +19,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Portfolio</title>
+
+  <!-- ------------------------------------- HTML TO CSS LINK --------------------------- -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+  <!-- ------------------------------------- HOME SECTION --------------------------- -->
   <section class="home">
     <nav>
       <ul>
@@ -30,7 +34,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contacts">Contact</a></li>
       </ul>
     </nav>
     <div class="mainhome">
@@ -45,7 +49,7 @@
           across Java, and C++, and I have a keen interest in both Frontend
           and App development.
         </p>
-        <button>Latest Resume</button>
+        <a href="Resume.pdf"><button>Latest Resume</button></a>
       </div>
       <div id="homeimg">
         <img src="MySelf.jpg" />
@@ -56,18 +60,23 @@
         <h5>Active Media Links</h5>
       </div>
       <div class="Linkss">
-        <div id="Link1">
+        <a href="https://in.linkedin.com/in/krunal-kurkure-52458a25b"><div id="Link1">
           <img src="linkedinlogo.png" alt="logo" srcset="" />
           <h6>LinkedIn</h6>
         </div>
+        </a>
+        <a href="https://github.com/Krunal-Kurkure">
         <div id="Link1">
           <img src="githublogo.png" alt="logo" srcset="" />
           <h6>GitHub</h6>
         </div>
+      </a>
+      <a href="https://leetcode.com/u/Krunal_Arvind_Kurkure/">
         <div id="Link1">
           <img src="Leetcodelogo.png" alt="logo" srcset="" />
           <h6>LeetCode</h6>
         </div>
+      </a>
         <div id="Link1">
           <img src="Maillogo.png" alt="logo" srcset="" />
           <h6>E-mail</h6>
@@ -85,6 +94,7 @@
     </div>
   </section>
 
+  <!-- ------------------------------------- ABOUT SECTION --------------------------- -->
   <section class="about" id="about">
     <h1>About Me</h1>
     <p id="maintext">
@@ -126,6 +136,7 @@
     </div>
   </section>
 
+  <!-- ------------------------------------- EXPERIENCE SECTION --------------------------- -->
   <section class="experience" id="experience">
     <div class="head">
       <h1>Experience</h1>
@@ -159,7 +170,9 @@
     </div>
   </section>
 
-  <section class="projects">
+
+  <!-- ------------------------------------- PROJECT SECTION --------------------------- -->
+  <section class="projects" id="projects">
     <div id="headpro">
       <h1>Projects</h1>
       <p>As according to my skills I develops the projects in VS - Code IDE. Landing pages of Apps and other java
@@ -212,8 +225,57 @@
         </div>
       </div>
     </div>
-
   </section>
+
+  <!-- ------------------------------------- CONTACT SECTION --------------------------- -->
+   <section class="contact" id="contacts">
+    <div class="headcont">
+      <h1>Get In Touch</h1>
+      <p>Thanks For Visiting My portfolio If You Like My Portfolio Than You Can Send The Message. </p>
+    </div>
+    <div class="contactss">
+      <h5>Email</h5>
+      <input type="emial"  placeholder="Please enter your email">
+      <h5>Mobile</h5>
+      <input type="text"  placeholder="Please enter your number">
+      <h5>Message</h5>
+      <input type="text" id="mess" placeholder="Enter Message">
+      <input type="submit" id="contsub">
+    </div>
+    <div class="Linkss link">
+      <a href="https://in.linkedin.com/in/krunal-kurkure-52458a25b"><div id="Link1">
+        <img src="linkedinlogo.png" alt="logo" srcset="" />
+        <h6>LinkedIn</h6>
+      </div>
+      </a>
+      <a href="https://github.com/Krunal-Kurkure">
+      <div id="Link1">
+        <img src="githublogo.png" alt="logo" srcset="" />
+        <h6>GitHub</h6>
+      </div>
+    </a>
+    <a href="https://leetcode.com/u/Krunal_Arvind_Kurkure/">
+      <div id="Link1">
+        <img src="Leetcodelogo.png" alt="logo" srcset="" />
+        <h6>LeetCode</h6>
+      </div>
+    </a>
+      <div id="Link1">
+        <img src="Maillogo.png" alt="logo" srcset="" />
+        <h6>E-mail</h6>
+      </div>
+      <div id="Link1">
+        <img src="youtubelogo.png" alt="logo" srcset="" />
+        <h6>YouTube</h6>
+      </div>
+
+      <div id="Link1">
+        <img src="telelogo.png" alt="logo" srcset="" />
+        <h6>Telegram</h6>
+      </div>
+    </div>
+   </section>
+   
   <script src="script.js"></script>
 </body>
 
