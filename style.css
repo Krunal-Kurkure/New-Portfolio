@@ -3,16 +3,20 @@
   padding: 0;
   margin: 0;
 }
+
 body {
   margin: 0;
   background-color: rgb(8, 8, 8);
   color: #ffffff;
 }
-
+a{
+  text-decoration: none;
+}
 .home {
   min-height: 100vh;
   background-color: rgb(8, 8, 8);
 }
+
 nav {
   background-color: #333;
   padding: 20px 0;
@@ -41,6 +45,7 @@ nav ul li a {
 nav ul li a:hover {
   color: white;
 }
+
 @media (max-width: 700px) {
   nav {
     display: none;
@@ -70,6 +75,7 @@ nav ul li a:hover {
 
   font-family: "Raleway", sans-serif;
 }
+
 #hometext p {
   color: #808080;
   font-family: "IBM Plex Mono", monospace;
@@ -127,9 +133,11 @@ nav ul li a:hover {
   border: 1.2px solid rgba(255, 255, 255, 0.328);
   border-radius: 5px;
 }
+
 #Link1:hover {
   border: 1.2px solid white;
 }
+
 #Link1 img {
   align-items: center;
   justify-content: center;
@@ -149,9 +157,11 @@ nav ul li a:hover {
 #Link1 h6:hover {
   color: white;
 }
+
 .Linkss1 {
   display: none;
 }
+
 .Linkss2 {
   display: none;
 }
@@ -191,6 +201,7 @@ nav ul li a:hover {
     display: block;
     margin: auto;
   }
+
   .mainlinks {
     margin: 20px 50px;
     width: auto;
@@ -200,19 +211,23 @@ nav ul li a:hover {
   .Linkss {
     flex-wrap: wrap;
   }
+
   #Link1 {
     margin: 10px 5px;
   }
+
   .mainlinks h5 {
     display: block;
     margin: auto;
     align-items: center;
     text-align: center;
   }
+
   br {
     display: none;
   }
 }
+
 @media (max-width: 365px) {
   .Linkss {
     margin: auto;
@@ -225,6 +240,7 @@ nav ul li a:hover {
   min-height: 100vh;
   background-color: #ffffff;
 }
+
 .about h1 {
   padding: 20px 40px;
   color: black;
@@ -232,6 +248,7 @@ nav ul li a:hover {
   font-size: 34px;
   font-family: "Raleway", sans-serif;
 }
+
 #maintext {
   text-align: center;
   color: #333;
@@ -241,6 +258,7 @@ nav ul li a:hover {
   margin: auto;
   display: block;
 }
+
 .education1 {
   width: auto;
   margin: 20px 100px;
@@ -248,6 +266,7 @@ nav ul li a:hover {
   justify-content: space-between;
   height: 200px;
 }
+
 .education1 #edu1 h6 {
   font-family: "Raleway", sans-serif;
   width: max-content;
@@ -258,11 +277,13 @@ nav ul li a:hover {
   background-color: #fee8c7;
   color: #ff9900;
 }
+
 .education1 #edu1 h2 {
   color: #080808;
   font-family: "Raleway", sans-serif;
   margin: 5px 0px;
 }
+
 .education1 #edu1 p {
   font-family: "IBM Plex Mono", monospace;
   color: #333;
@@ -270,17 +291,21 @@ nav ul li a:hover {
   text-align: left;
   margin-bottom: 20px;
 }
+
 #edu2 img {
   width: auto;
   height: 200px;
 }
+
 @media (max-width: 700px) {
   #edu2 img {
     display: none;
   }
+
   #maintext {
     width: 75vw;
   }
+
   .education1 {
     margin: 40px 40px;
     height: fit-content;
@@ -302,14 +327,16 @@ nav ul li a:hover {
   border-radius: 10px;
   text-align: center;
   margin-bottom: 25px;
-  background-color: #D0E6FF;
-  color: #000AFF;
+  background-color: #d0e6ff;
+  color: #000aff;
 }
+
 .education2 #edu1 h2 {
   color: #080808;
   font-family: "Raleway", sans-serif;
   margin: 15px 0px;
 }
+
 .education2 #edu1 p {
   font-family: "IBM Plex Mono", monospace;
   color: #333;
@@ -317,155 +344,183 @@ nav ul li a:hover {
   text-align: left;
   margin-bottom: 20px;
 }
+
 @media (max-width: 700px) {
-  .about{
+  .about {
     min-height: 100vh;
   }
+
   #edu2 img {
     display: none;
   }
+
   #maintext {
     width: 75vw;
   }
+
   .education2 {
     margin: 40px;
     height: fit-content;
   }
 }
 
-.experience{
+.experience {
   min-height: 100vh;
   position: relative;
   width: 100%;
 }
-.head h1{
+
+.head h1 {
   text-align: center;
   margin: 25px;
   font-size: 30px;
   font-family: "Raleway", sans-serif;
 }
-.head p{
-  
+
+.head p {
   text-align: center;
   margin: 10px;
   font-family: "IBM Plex Mono", monospace;
   color: #858585;
 }
-.mainexp{
+
+.mainexp {
   width: auto;
   display: flex;
   margin: 40px 100px;
   height: 400px;
 }
+
 #exp1 {
   width: 100%;
   display: flex;
   height: 100%;
 }
-#exp1 img{
+
+#exp1 img {
   height: 400px;
 }
-#exp1 ul{
+
+#exp1 ul {
   position: absolute;
   line-height: 60px;
   margin: 70px;
 }
-#exp1 li{
+
+#exp1 li {
   font-family: "IBM Plex Mono", monospace;
   color: #858585;
 }
+
 #exp2 {
   width: 100%;
   height: 100%;
   display: flex;
 }
-#exp2 img{
+
+#exp2 img {
   height: 400px;
 }
-#exp2 ul{
+
+#exp2 ul {
   position: absolute;
   line-height: 60px;
   margin: 70px;
 }
-#exp2 li{
+
+#exp2 li {
   font-family: "IBM Plex Mono", monospace;
   color: #858585;
 }
 
-@media (max-width: 700px){
-
-  .mainexp{
+@media (max-width: 700px) {
+  .mainexp {
     display: block;
     margin: 25px 40px;
     height: fit-content;
   }
-  .head p{
+
+  .head p {
     margin: 25px 40px;
   }
-  #exp1 ul{
+
+  #exp1 ul {
     margin: 50px 40px;
   }
-  #exp1 ul li{
+
+  #exp1 ul li {
     font-size: 18px;
     line-height: 40px;
   }
-  #exp2 ul{
+
+  #exp2 ul {
     margin: 50px 40px;
   }
-  #exp2 ul li{
+
+  #exp2 ul li {
     font-size: 18px;
     line-height: 55px;
   }
 }
-@media (max-width: 400px){
-  #exp1 img{
+
+@media (max-width: 400px) {
+  #exp1 img {
     width: 60vw;
   }
-  #exp2 img{
+
+  #exp2 img {
     width: 60vw;
   }
-  #exp1 ul{
+
+  #exp1 ul {
     margin: 50px 40px;
   }
-  #exp1 ul li{
+
+  #exp1 ul li {
     font-size: 14px;
     line-height: 40px;
   }
-  #exp2 ul{
+
+  #exp2 ul {
     margin: 50px 40px;
   }
-  #exp2 ul li{
+
+  #exp2 ul li {
     font-size: 14px;
     line-height: 50px;
   }
 }
 
-.projects{
+.projects {
   min-height: 100vh;
-  position: absolute;
+  position: relative;
   width: 100%;
   background-color: #ffffff;
 }
-#headpro h1{
+
+#headpro h1 {
   text-align: center;
-  margin: 40px 100px;
+  padding: 30px 100px;
   font-size: 30px;
   font-family: "Raleway", sans-serif;
   color: #080808;
 }
-#headpro p{
+
+#headpro p {
   color: #333;
   text-align: center;
   margin: 10px 100px;
   font-family: "IBM Plex Mono", monospace;
 }
-@media (max-width: 700px){
-  #headpro p{
+
+@media (max-width: 700px) {
+  #headpro p {
     margin: 8px 40px;
     font-size: 13px;
   }
 }
-.mainpro{
+
+.mainpro {
   margin: 20px 100px;
   height: 420px;
   display: flex;
@@ -473,6 +528,7 @@ nav ul li a:hover {
   overflow-x: scroll;
   overflow-y: hidden;
 }
+
 .mainpro::-webkit-scrollbar {
   width: 20px;
   height: 10px;
@@ -481,41 +537,44 @@ nav ul li a:hover {
 /* Track */
 ::-webkit-scrollbar-track {
   background-color: #e0e0e0;
-  
+
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(206, 82, 0); 
+  background: rgb(206, 82, 0);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #090051; 
+  background: #090051;
 }
-.slide1{
 
+.slide1 {
   width: 370px;
 }
-.slide1 img{
+
+.slide1 img {
   width: 70%;
   border-radius: 10px;
-  
 }
-.slide1 h3{
+
+.slide1 h3 {
   font-family: "Raleway", sans-serif;
   margin: 5px 0px;
   font-size: 23px;
   color: #080808;
 }
-.slide1 p{
+
+.slide1 p {
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   color: #333;
   margin: 15px 0px;
 }
+
 .slide1 button {
   width: 140px;
   height: 35px;
@@ -526,16 +585,19 @@ nav ul li a:hover {
   transition: 0.3s;
   color: white;
 }
+
 .slide1 button:hover {
   width: 142px;
   height: 37px;
   box-shadow: 0px 5px 20px 0.1px #408e009e;
 }
-@media (max-width: 700px){
-  .projects{
-    min-height: 85vh;
+
+@media (max-width: 700px) {
+  .projects {
+    min-height: 75vh;
   }
-  .mainpro{
+
+  .mainpro {
     margin: auto;
     width: 300px;
     padding: 40px 0px;
@@ -543,10 +605,130 @@ nav ul li a:hover {
     align-items: center;
     height: auto;
   }
-  .slide1{
+
+  .slide1 {
     width: 300px;
     align-items: center;
     text-align: center;
     display: block;
+  }
+}
+
+.contact {
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+.headcont h1 {
+  text-align: center;
+  padding: 30px 100px;
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+}
+
+.headcont p {
+  color: #7f7f7f;
+  text-align: center;
+  margin: 10px 100px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+@media (max-width: 700px) {
+  .headcont h1 {
+    padding: 30px 40px;
+  }
+
+  .headcont p {
+    margin: 8px 40px;
+    font-size: 13px;
+  }
+}
+
+.contactss {
+  width: 32vw;
+  top: 25px;
+  position: relative;
+  margin: auto;
+}
+
+.contactss h5 {
+  margin: 10px 0px;
+  font-size: 14px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  border: none;
+  transition: 0.3s;
+  border-radius: 6px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+input:hover {
+  border-radius: 50px;
+  box-shadow: 0px 0px 8px 0.1px rgba(255, 255, 255, 0.555);
+}
+::placeholder{
+  padding-left: 10px;
+}
+
+#contsub {
+  width: 100%;
+  margin: 20px 0px; 
+  height: 35px;
+  background-color: #3f8e00;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: none;
+  font-family: "IBM Plex Mono", monospace;
+  transition: 0.3s;
+  color: white;
+}
+
+#contsub:hover {
+  border-radius: 50px;
+  box-shadow: 0px 5px 20px 0.1px #408e009e;
+}
+#mess{
+  height: 80px;
+ 
+}
+#mess:hover{
+  border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .contactss {
+    width: 82vw;
+    margin: auto;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  textarea {
+    width: 90%;
+  }
+}
+
+.link {
+  margin: 60px 100px;
+}
+
+@media (max-width: 700px) {
+  #Link1 {
+    margin: 10px 5px;
+  }
+  .Linkss {
+    flex-wrap: wrap;
+  }
+  .link{
+    position: relative;
+    top: 30px;
+    margin: 20px 30px;
   }
 }
