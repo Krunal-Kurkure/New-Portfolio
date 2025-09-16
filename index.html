@@ -2,281 +2,1124 @@
 <html lang="en">
 
 <head>
-  <!-- ----------------------------------- IBM font ------------------------------------ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet" />
-
-  <!-- ----------------------------------- RALEWAY font --------------------------------  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio</title>
+  <title>Krunal Kurkure | Software Engineer Portfolio</title>
 
-  <!-- ------------------------------------- HTML TO CSS LINK --------------------------- -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* --- THEME & BASE STYLES --- */
+    :root {
+      --bg-dark: #030712;
+      /* Near Black */
+      --bg-medium: #111827;
+      /* Dark Gray */
+      --bg-light: #1f2937;
+      /* Lighter Gray */
+      --primary-cyan: #22d3ee;
+      --primary-magenta: #c026d3;
+      --text-light: #f9fafb;
+      /* Off-White */
+      --text-grey: #8a8a8a;
+      --text-muted: #9ca3af;
+      /* Gray */
+      --border-color: rgba(255, 255, 255, 0.1);
+      --radius: 16px;
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.15);
+      --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    ::selection {
+      background-color: var(--primary-cyan);
+      color: var(--bg-dark);
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .section-padding {
+      padding: 120px 0;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 1rem;
+      background: -webkit-linear-gradient(45deg,
+          var(--primary-cyan),
+          var(--text-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-inline: auto;
+      font-size: 1.1rem;
+    }
+
+    .section-sub1 {
+      color: var(--text-muted);
+    }
+
+    /* --- UI Components: Glassmorphism & Aurora --- */
+    .card-glass {
+      background: linear-gradient(135deg,
+          rgba(31, 41, 55, 0.5),
+          rgba(17, 24, 39, 0.5));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-glass:hover {
+      border-color: rgba(34, 211, 238, 0.5);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-aurora {
+      background-image: linear-gradient(90deg,
+          var(--primary-cyan),
+          var(--primary-magenta));
+      border: 0;
+      color: white;
+      padding: 14px 32px;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(192, 38, 211, 0.3);
+    }
+
+    .btn-aurora:hover {
+      color: white;
+      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.4);
+      transform: scale(1.05);
+    }
+
+    .btn-outline-glass {
+      background: transparent;
+      border: 2px solid var(--border-color);
+      color: var(--text-light);
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-glass:hover {
+      border-color: var(--primary-cyan);
+      background-color: rgba(34, 211, 238, 0.1);
+      color: var(--primary-cyan);
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      background: rgba(3, 7, 18, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-muted) !important;
+      transition: color 0.2s;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: var(--text-light) !important;
+    }
+
+    /* --- Hero Section & Particle Canvas --- */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: -webkit-linear-gradient(45deg,
+          var(--primary-cyan),
+          var(--text-light),
+          var(--primary-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typewriter-container {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: var(--text-muted);
+      min-height: 80px;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.5rem;
+      background-color: var(--primary-cyan);
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* --- Skills Section Expanded --- */
+    .skill-category-card {
+      background: var(--bg-medium);
+      padding: 2rem;
+      border-radius: var(--radius);
+      height: 100%;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--bg-light);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .skill-item:hover {
+      background-color: rgba(34, 211, 238, 0.1);
+    }
+
+    .skill-item i {
+      color: var(--primary-cyan);
+      font-size: 1.5rem;
+    }
+
+    /* --- Projects Section Expanded --- */
+    .project-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .card-title {
+      color: var(--text-light);
+    }
+
+    .project-card .card-img-top {
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .tech-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: var(--bg-medium);
+      border: 1px solid var(--border-color);
+      margin: 2px;
+    }
+
+    .project-link {
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .project-link:hover {
+      color: var(--primary-cyan);
+    }
+
+    /* --- Project Modal --- */
+    .modal {
+      --bs-modal-bg: var(--bg-medium);
+      --bs-modal-color: var(--text-light);
+      --bs-modal-border-color: var(--border-color);
+      --bs-modal-header-border-color: var(--border-color);
+      --bs-modal-footer-border-color: var(--border-color);
+    }
+
+    .modal-header .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    .modal-body h5 {
+      color: var(--primary-cyan);
+    }
+
+    /* --- Timeline --- */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      background-image: linear-gradient(var(--primary-cyan),
+          var(--primary-magenta));
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-container.left {
+      left: 0;
+    }
+
+    .timeline-container.right {
+      left: 50%;
+    }
+
+    .timeline-container::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: var(--bg-medium);
+      border: 4px solid var(--primary-cyan);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      transition: transform 0.2s;
+    }
+
+    .timeline-container:hover::after {
+      transform: scale(1.2);
+    }
+
+    .timeline-container.right::after {
+      left: -10px;
+    }
+
+    .timeline-content {
+      padding: 2rem;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary-cyan);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-container.right {
+        left: 0;
+      }
+
+      .timeline-container.left::after,
+      .timeline-container.right::after {
+        left: 21px;
+      }
+    }
+
+    /* --- Contact Form & Terminal --- */
+    .terminal-window {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      background-color: var(--bg-medium);
+    }
+
+    .terminal-header {
+      background-color: var(--bg-light);
+      padding: 0.75rem 1rem;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .form-control.terminal-input {
+      background-color: transparent;
+      border: none;
+      color: var(--text-light);
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .terminal-input::placeholder {
+      color: var(--text-light);
+      opacity: 0.5;
+    }
+
+    .terminal-input:focus {
+      outline: none;
+      caret-color: limegreen;
+      /* Gives a retro terminal feel */
+    }
+
+    .form-control.terminal-input:focus {
+      box-shadow: none;
+    }
+
+    /* --- Scroll Animations --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- ------------------------------------- HOME SECTION --------------------------- -->
-  <section class="home">
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contacts">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="mainhome">
-      <div id="hometext">
-        <h1>
-          Krunal Arvind <br />
-          Kurkure
-        </h1>
-        <p>
-          Hello! I am a passionate and dedicated student in various
-          programming languages and development frameworks. My expertise spans
-          across Java, and C++, and I have a keen interest in both Frontend
-          and App development.
-        </p>
-        <a href="Resume.pdf"><button>Latest Resume</button></a>
-      </div>
-      <div id="homeimg">
-        <img src="MySelf.jpg" />
-      </div>
-    </div>
-    <div class="mainlinks">
-      <div>
-        <h5>Active Media Links</h5>
-      </div>
-      <div class="Linkss">
-        <a href="https://in.linkedin.com/in/krunal-kurkure-52458a25b"><div id="Link1">
-          <img src="linkedinlogo.png" alt="logo" srcset="" />
-          <h6>LinkedIn</h6>
-        </div>
-        </a>
-        <a href="https://github.com/Krunal-Kurkure">
-        <div id="Link1">
-          <img src="githublogo.png" alt="logo" srcset="" />
-          <h6>GitHub</h6>
-        </div>
-      </a>
-      <a href="https://leetcode.com/u/Krunal_Arvind_Kurkure/">
-        <div id="Link1">
-          <img src="Leetcodelogo.png" alt="logo" srcset="" />
-          <h6>LeetCode</h6>
-        </div>
-      </a>
-        <div id="Link1">
-          <img src="Maillogo.png" alt="logo" srcset="" />
-          <h6>E-mail</h6>
-        </div>
-        <div id="Link1">
-          <img src="youtubelogo.png" alt="logo" srcset="" />
-          <h6>YouTube</h6>
-        </div>
-
-        <div id="Link1">
-          <img src="telelogo.png" alt="logo" srcset="" />
-          <h6>Telegram</h6>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">&lt; KK /&gt;</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#journey">Journey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- ------------------------------------- ABOUT SECTION --------------------------- -->
-  <section class="about" id="about">
-    <h1>About Me</h1>
-    <p id="maintext">
-      I am an experienced third-year Computer Science Engineer student with a
-      strong academic record (CGPA: 8.76), I am passionate about leveraging
-      technology to create innovative solutions. I have hands-on experience in
-      building a variety of projects with understanding logics in both app and
-      website development
-    </p>
-    <div class="education1">
-      <div id="edu1">
-        <h6>Education</h6>
-        <h2>Under Graduate, Second Year with 8.82 CGPA</h2>
-        <p>
-          School Of Computer Science And Engineering, Sandip University,
-          Nashik.
-        </p>
-        <h2>Pursued 77% in 12th HSC, Dist. Jalgaon</h2>
-        <p>
-          K Narkhede Vidyalaya And Higher Secondary high School, Bhusawal.
-        </p>
+  <!-- Hero Section -->
+  <header id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content container">
+      <h1 class="hero-title">Krunal Kurkure</h1>
+      <div class="typewriter-container my-4">
+        <span id="typewriter-text"></span>
+        <span class="typewriter-cursor"></span>
       </div>
-
-      <div id="edu2">
-        <img src="education.png" alt="" />
-      </div>
-    </div>
-    <div class="education2">
-      <div id="edu2">
-        <img src="hobbies.png" />
-      </div>
-      <div id="edu1">
-        <h6>Hobbies</h6>
-        <h2>Coding In VS-Code IDE</h2>
-        <h2>Editing (Photos & Videos)</h2>
-        <h2>Creating Miniatures of Indian Railways.</h2>
-        <h2>Badminton & E-Game (Max-Payne)</h2>
-      </div>
-    </div>
-  </section>
-
-  <!-- ------------------------------------- EXPERIENCE SECTION --------------------------- -->
-  <section class="experience" id="experience">
-    <div class="head">
-      <h1>Experience</h1>
-      <p>
-        My experience contains moderate skills sets and that I am on the way
-        to be expertise.
+      <p class="lead text-light mx-auto" style="max-width: 650px">
+        A creative software engineer passionate about building scalable
+        distributed systems, exploring machine learning, and delivering
+        seamless user experiences through robust code.
       </p>
-    </div>
-    <div class="mainexp">
-      <div id="exp1">
-        <img src="expback.png" alt="" />
-        <ul>
-          <li>Frontend Developer (GSAP library).</li>
-          <li>OOP in (C++) and (JAVA). </li>
-          <li>Data Structure and Algorithm (C++).</li>
-          <li>App Development (Android Studio).</li>
-          <li>German (Foreign Language)</li>
-        </ul>
-      </div>
-      <div id="exp2">
-        <img src="expback.png" alt="" />
-        <ul>
-          <li>DBMS (MySQL).</li>
-          <li>Communications Skills.</li>
-          <li>Basic Problem Solving (LeetCode).</li>
-          <li>Basic UI/UX (FIGMA).</li>
-          <li>Basic Flutter.</li>
-        </ul>
+      <div class="mt-5">
+        <a href="#projects" class="btn btn-aurora btn-lg me-sm-2 mb-2 mb-sm-0">Explore My Work</a>
+        <a href="/assets/Resume.pdf" class="btn btn-outline-glass btn-lg">Resume</a>
       </div>
     </div>
-    </div>
-  </section>
+  </header>
 
-
-  <!-- ------------------------------------- PROJECT SECTION --------------------------- -->
-  <section class="projects" id="projects">
-    <div id="headpro">
-      <h1>Projects</h1>
-      <p>As according to my skills I develops the projects in VS - Code IDE. Landing pages of Apps and other java
-        projects.</p>
-    </div>
-
-    <div class="mainpro">
-      <div class="mainp">
-        <div class="slide1">
-          <img src="Weather App.png" alt="" srcset="">
-          <h3>Weather Forecast App</h3>
-          <p>My latest Weather Forecast App live giving Details according city's names.</p>
-          <a href="https://github.com/Krunal-Kurkure/Weather-Forecast"><button>Know More</button></a>
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <div class="p-3 card-glass">
+              <img src="/assets/MySelf.jpg" class="img-fluid rounded-3" alt="Krunal Kurkure Profile" />
+            </div>
+          </div>
+          <div class="col-lg-7 reveal text-">
+            <h2 class="section-title">
+              Architecting the Future, One Line of Code at a Time.
+            </h2>
+            <p class="section-sub1 fs-5">
+              I am a final-year Computer Science student with a deep-seated
+              passion for solving complex computational problems. My focus
+              lies in backend development and systems architecture, with a
+              growing interest in leveraging AI/ML to build smarter, more
+              efficient applications. I thrive on clean code, robust testing,
+              and collaborative innovation.
+            </p>
+            <p class="section-sub1 fs-5">
+              From designing distributed systems in class projects to building
+              full-stack applications in internships, my journey is a
+              continuous quest for knowledge and impact.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="mainp">
-        <div class="slide1">
-          <img src="Food App.png" alt="" srcset="">
-          <h3>Food Recpies App</h3>
-          <p>Recpie App to Guide to make Recpies with ingredients and process.</p>
-          <a href="https://github.com/Krunal-Kurkure/StudFood-App"><button>Know More</button></a>
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding" style="background-color: var(--bg-medium)">
+      <div class="container text-center">
+        <div class="section-header">
+          <h2 class="section-title">My Technical Arsenal</h2>
+          <p class="section-sub">
+            A detailed overview of my technical toolkit, meticulously
+            organized from backend systems and frontend frameworks to cloud
+            infrastructure and machine learning libraries.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 100ms">
+            <div class="skill-category-card">
+              <h4 class="mb-4">
+                <i class="bi bi-hdd-stack-fill me-2"></i>Backend & Databases
+              </h4>
+              <div class="skill-item">
+                <i class="bi bi-braces"></i> Node.js (Express)
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-file-earmark-code-fill"></i> MongoDB
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-gear-wide-connected"></i> SupaBase
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 200ms">
+            <div class="skill-category-card">
+              <h4 class="mb-4">
+                <i class="bi bi-display-fill me-2"></i>Frontend
+              </h4>
+              <div class="skill-item">
+                <i class="bi bi-filetype-jsx"></i> React
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-filetype-html"></i> HTML5 & CSS3
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-bootstrap-fill"></i> Bootstrap 5
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-palette-fill"></i> Tailwind CSS
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-filetype-js"></i> JavaScript (ES6+)
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 300ms">
+            <div class="skill-category-card">
+              <h4 class="mb-4">
+                <i class="bi bi-cloud-upload-fill me-2"></i>Cloud & DevOps
+              </h4>
+              <div class="skill-item">
+                <i class="bi bi-diagram-3-fill"></i> Kubernetes
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-github"></i> GitHub Actions (CI/CD)
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-amazon"></i> AWS (EC2, S3, Lambda)
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-google"></i> Google Cloud Platform
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal" style="transition-delay: 500ms">
+            <div class="skill-category-card">
+              <h4 class="mb-4">
+                <i class="bi bi-tools me-2"></i>Other Tools & Principles
+              </h4>
+              <div class="skill-item">
+                <i class="bi bi-git"></i> Git & Version Control
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-ethernet"></i> REST APIs & gRPC
+              </div>
+              <div class="skill-item">
+                <i class="bi bi-bar-chart-steps"></i> Agile Methodologies
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div class="mainp">
-        <div class="slide1">
-          <img src="Landing page.png" alt="" srcset="">
-          <h3>Landing Webpages</h3>
-          <p>I developed Landing webpages of my own Portfolio, Interior Design, Netflix Clone etc.</p>
-          <a href="https://github.com/Krunal-Kurkure/Netflix-Clone-Landing-page-"><button>Know More</button></a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+      <div class="container text-center">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-sub">
+            Here are some projects where I've applied my skills to solve
+            real-world problems, explore new technologies, and build
+            production-ready systems.
+          </p>
+        </div>
+        <div class="row g-4">
+          <!-- Dynamically generated projects will go here -->
         </div>
       </div>
+    </section>
 
-      <div class="mainp">
-        <div class="slide1">
-          <img src="E-Commerce.png" alt="" srcset="">
-          <h3>Food Grocery</h3>
-          <p>I developed Food Grocery webpages Using Frontend and Backend</p>
-          <a href="https://github.com/Krunal-Kurkure/Grocery-Delivery-Application"><button>Know More</button></a>
+    <!-- Journey Section -->
+    <section id="journey" class="section-padding" style="background-color: var(--bg-medium)">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title text-center">My Engineering Journey</h2>
+        </div>
+        <div class="timeline mt-5">
+          <div class="timeline-container left reveal">
+            <div class="timeline-content card-glass">
+              <p class="timeline-date">Certification 2025</p>
+              <h4>
+                Oracle Cloud Infrastructure 2025 Certified AI Foundations
+                Associate
+              </h4>
+              <p class="section-sub1 small">
+                The OCI 2025 Certified AI Foundations Associate certifies
+                basic knowledge of AI, ML, deep learning, and generative AI,
+                with a focus on Oracle Cloud’s AI services, responsible AI
+                practices, and practical applications—ideal for beginners and
+                a foundation for advanced OCI certifications.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container right reveal">
+            <div class="timeline-content card-glass">
+              <p class="timeline-date">Intern 2025</p>
+              <h4>App Developer Intern - CODEC Technologies</h4>
+              <p class="section-sub1 small">
+                A React Native Internship offers hands-on experience in building cross-platform mobile apps while
+                learning JavaScript, React concepts, and UI/UX design. Interns gain skills in API integration,
+                debugging, optimization, and app deployment, making it ideal for beginners starting a career in mobile
+                development.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container left reveal">
+            <div class="timeline-content card-glass">
+              <p class="timeline-date">2024 Summary</p>
+              <h4>Internships & Certifications</h4>
+              <p class="section-sub1 small">
+              <ul>
+                <li>
+                  Java Developer Intern
+                </li>
+                <li>
+                  Full Stack Web Development Intern
+                </li>
+                <li>
+                  AWS Certified
+                </li>
+                <li>
+                  DSA - C/C++ (Udemy)
+                </li>
+                <li>
+                  Web Developer Certified (Udemy)
+                </li>
+                <li>
+                  Swayam Certified (Entrepreneurship Essentials)
+                </li>
+              </ul>
+              </p>
+            </div>
+          </div>
+          <div class="timeline-container right reveal">
+            <div class="timeline-content card-glass">
+              <p class="timeline-date">2023 Summary</p>
+              <h4>INSIGHT -23 Event Sandip University</h4>
+              <ul>
+                <li>
+                  CR -Class Representative of 2nd
+                </li>
+                <li>
+                  2nd Winner In AUTOCAD Race
+                </li>
+                <li>
+                  Registration Commity Member at INSIGHT EVENT
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="mainp">
-        <div class="slide1">
-          <img src="E-Learning.png" alt="" srcset="">
-          <h3>E-Learning Platfrom</h3>
-          <p>I developed E-Learning Platfrom just by using Frontent.</p>
-          <a href="https://github.com/Krunal-Kurkure/E-Learning-Platform"><button>Know More</button></a>
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Let's Build Together</h2>
+          <p class="section-sub">
+            I'm actively seeking 2026 new grad opportunities in software
+            engineering, backend development, or Ai infrastructure. Have a
+            project, an idea, or an opportunity? I'd love to connect.
+          </p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 reveal">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <span class="terminal-dot" style="background: #ff5f56"></span>
+                <span class="terminal-dot" style="background: #ffbd2e"></span>
+                <span class="terminal-dot" style="background: #27c93f"></span>
+              </div>
+              <div class="p-4">
+                <form id="contactForm">
+                  <div class="row g-4">
+                    <div class="col-md-6 d-flex align-items-center">
+                      <span class="section-sub1 me-2">$</span><input type="text" class="form-control terminal-input"
+                        placeholder="Your Name" required />
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                      <span class="section-sub1 me-2">$</span><input type="email" class="form-control terminal-input"
+                        placeholder="Your Email" required />
+                    </div>
+                    <div class="col-12 d-flex">
+                      <span class="section-sub1 me-2 mt-2">$</span><textarea rows="5"
+                        class="form-control terminal-input" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button type="submit" class="btn btn-aurora">
+                        Execute Send
+                      </button>
+                    </div>
+                  </div>
+                  <div id="form-feedback" class="mt-4 text-center"></div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ------------------------------------- CONTACT SECTION --------------------------- -->
-   <section class="contact" id="contacts">
-    <div class="headcont">
-      <h1>Get In Touch</h1>
-      <p>Thanks For Visiting My portfolio If You Like My Portfolio Than You Can Send The Message. </p>
+  <!-- Footer -->
+  <footer class="text-center py-4 border-top" style="border-color: var(--border-color) !important">
+    <div class="container">
+      <p class="section-sub1 small mb-2">
+        Designed & Built by Krunal Kurkure © 2025
+      </p>
+      <div class="socials">
+        <a href="#" class="project-link me-3"><i class="bi bi-github"></i></a>
+        <a href="#" class="project-link me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="project-link"><i class="bi bi-twitter"></i></a>
+      </div>
     </div>
-    <div class="contactss">
-      <h5>Email</h5>
-      <input type="emial"  placeholder="Please enter your email">
-      <h5>Mobile</h5>
-      <input type="text"  placeholder="Please enter your number">
-      <h5>Message</h5>
-      <input type="text" id="mess" placeholder="Enter Message">
-      <input type="submit" id="contsub">
-    </div>
-    <div class="Linkss link">
-      <a href="https://in.linkedin.com/in/krunal-kurkure-52458a25b"><div id="Link1">
-        <img src="linkedinlogo.png" alt="logo" srcset="" />
-        <h6>LinkedIn</h6>
-      </div>
-      </a>
-      <a href="https://github.com/Krunal-Kurkure">
-      <div id="Link1">
-        <img src="githublogo.png" alt="logo" srcset="" />
-        <h6>GitHub</h6>
-      </div>
-    </a>
-    <a href="https://leetcode.com/u/Krunal_Arvind_Kurkure/">
-      <div id="Link1">
-        <img src="Leetcodelogo.png" alt="logo" srcset="" />
-        <h6>LeetCode</h6>
-      </div>
-    </a>
-      <div id="Link1">
-        <img src="Maillogo.png" alt="logo" srcset="" />
-        <h6>E-mail</h6>
-      </div>
-      <div id="Link1">
-        <img src="youtubelogo.png" alt="logo" srcset="" />
-        <h6>YouTube</h6>
-      </div>
+  </footer>
 
-      <div id="Link1">
-        <img src="telelogo.png" alt="logo" srcset="" />
-        <h6>Telegram</h6>
-      </div>
-    </div>
-   </section>
-   
-  <script src="script.js"></script>
+  <!-- Modals will be injected here by JavaScript -->
+  <div id="modal-container"></div>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Enhanced JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- 1. INTERACTIVE PARTICLE HERO BACKGROUND ---
+      const canvas = document.getElementById("particle-canvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      const mouse = { x: null, y: null, radius: 150 };
+
+      function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 1.5 + 1;
+          this.speedX = (Math.random() * 2 - 1) * 0.5;
+          this.speedY = (Math.random() * 2 - 1) * 0.5;
+          this.color = `rgba(34, 211, 238, ${Math.random() * 0.5 + 0.2})`;
+        }
+        update() {
+          if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+          if (this.y > canvas.height || this.y < 0)
+            this.speedY = -this.speedY;
+
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            this.x -= dx / 20;
+            this.y -= dy / 20;
+          } else {
+            this.x += this.speedX;
+            this.y += this.speedY;
+          }
+        }
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        const numberOfParticles = (canvas.width * canvas.height) / 12000;
+        for (let i = 0; i < numberOfParticles; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.update();
+          p.draw();
+        });
+        connectParticles();
+        requestAnimationFrame(animateParticles);
+      }
+
+      function connectParticles() {
+        for (let a = 0; a < particles.length; a++) {
+          for (let b = a; b < particles.length; b++) {
+            let distance = Math.sqrt(
+              (particles[a].x - particles[b].x) *
+              (particles[a].x - particles[b].x) +
+              (particles[a].y - particles[b].y) *
+              (particles[a].y - particles[b].y)
+            );
+            if (distance < 100) {
+              const opacity = 1 - distance / 100;
+              ctx.strokeStyle = `rgba(192, 38, 211, ${opacity})`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(particles[a].x, particles[a].y);
+              ctx.lineTo(particles[b].x, particles[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      setCanvasSize();
+      initParticles();
+      animateParticles();
+      window.addEventListener("resize", () => {
+        setCanvasSize();
+        initParticles();
+      });
+      canvas.addEventListener("mousemove", (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+      });
+      canvas.addEventListener("mouseout", () => {
+        mouse.x = undefined;
+        mouse.y = undefined;
+      });
+
+      // --- 2. AI TYPEWRITER EFFECT ---
+      const typewriterText = document.getElementById("typewriter-text");
+      const words = [
+        "Full-Stack Developer",
+        "React Native Developer",
+        "Frontend Developer",
+        "UI/UX Designer",
+        "Problem Solver",
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentWord = words[wordIndex];
+        typewriterText.textContent = currentWord.substring(0, charIndex);
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(type, 150);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(type, 75);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) {
+            wordIndex = (wordIndex + 1) % words.length;
+          }
+          setTimeout(type, 1200);
+        }
+      }
+      type();
+
+      // --- 3. DYNAMIC PROJECT & MODAL INJECTION ---
+      const projectsData = [
+        {
+          id: "Sentiment Analysis",
+          title: "Sentiment Analysis: Real-time Data Using CSV",
+          img: "/assets/sentiment.png",
+          desc: "This sentiment analysis system processes textual data from a CSV file to predict sentiment labels such as Positive, Negative, or Neutral. It uses a combination of data preprocessing, feature extraction, and machine learning or deep learning models to classify user opinions",
+          tags: [
+            "Python",
+            "Pytorch",
+            "FastAPI",
+            "Streamlit",
+            "PyCharm IDE",
+            "LLaMA Model",
+          ],
+          github: "",
+        },
+        {
+          id: "MediScan Ai",
+          title: "MediScan Ai : AI-Based Diagnosis",
+          img: "/assets/mediscan.png",
+          desc: "This system leverages artificial intelligence to assist in the early detection and diagnosis of medical conditions using structured patient data. It processes inputs such as symptoms, test results, wounds images and demographic details",
+          tags: ["Python", "FastAPI", "LLaMA Model", "Mern-Stack", "UI/UX"],
+          github: "",
+        },
+        {
+          id: "UberClone",
+          title: "UberClone: Best Cab Service App",
+          img: "/assets/Uberclone.png",
+          desc: "This project is a feature-rich Uber clone that replicates core ride-hailing functionalities while integrating AI-driven enhancements for smarter user experience and backend efficiency. It supports real-time ride booking, driver-passenger matching, live tracking, and fare estimation, all wrapped in a sleek, responsive UI.",
+          tags: ["React.js", "Express.js", "MongoDB", "Node.js"],
+          github: "https://github.com/Krunal-Kurkure/UberClone",
+        },
+        {
+          id: "Bus Vacant Seat",
+          title: "Bus Vacant Seat: Detection",
+          img: "/assets/busvacent.png",
+          desc: "This system uses computer vision to automatically detect vacant seats in a bus using real-time image or video input. It’s designed to improve passenger convenience, optimize occupancy, and support smart transportation systems.",
+          tags: ["Python", "OpenCV", "PyCharm IDE", "Yolov8", "Pytorch"],
+          github: "https://github.com/Krunal-Kurkure/Revolutionizing-urban-mobility-with-Ai.git",
+        },
+        {
+          id: "KK Notes",
+          title: "KK-Notes: Modifed Note App",
+          img: "/assets/Notes.png",
+          desc: "KK-Notes is a lightweight, intuitive note-taking application designed for clarity, speed, and ease of use. It emphasizes full-screen readability with seamless navigation for editing, updating, and managing notes—including a smart bin system for deleted items.",
+          tags: ["React-Native", "JavaScript", "UI/UX", "MongoDB"],
+          github: "",
+        },
+        {
+          id: "Project Manager",
+          title: "Project Manager: Self Project Management system",
+          img: "/assets/project.png",
+          desc: "A Web application that allows users to create, manage, and showcase project cards with detailed metadata—including project descriptions, live links, and GitHub repositories. Designed for developers, students, and teams who want a clean and efficient way to organize their work.",
+          tags: ["React.js", "Express.js", "MongoDB", "Node.js"],
+          github: "",
+        },
+      ];
+
+      const projectsContainer = document.querySelector("#projects .row");
+      const modalContainer = document.getElementById("modal-container");
+
+      projectsData.forEach((project, index) => {
+        // Create Project Card
+        const projectCol = document.createElement("div");
+        projectCol.className = "col-lg-4 col-md-6 reveal";
+        projectCol.style.transitionDelay = `${index * 100}ms`;
+        projectCol.innerHTML = `
+                <div class="card project-card card-glass h-100">
+                    <img src="${project.img}" class="card-img-top" alt="${project.title
+          }">
+                    <div class="card-body">
+                        <h5 class="card-title">${project.title}</h5>
+                        <p class="card-text text-light small flex-grow-1">${project.desc
+          }</p>
+                        <div class="mb-3">${project.tags
+            .map(
+              (tag) =>
+                `<span class="section-sub1 tech-badge">${tag}</span>`
+            )
+            .join("")}</div>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            
+                            <div>
+                               <a href="${project.github}" target="_blank" class="project-link me-3" aria-label="GitHub repository">
+  <i class="bi bi-github fs-4"></i>
+</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+        projectsContainer.appendChild(projectCol);
+
+        // Create Modal
+        const modal = document.createElement("div");
+        modal.className = "modal fade";
+        modal.id = `${project.id}-modal`;
+        modal.tabIndex = -1;
+        modal.setAttribute("aria-labelledby", `${project.id}-label`);
+        modal.setAttribute("aria-hidden", "true");
+        modal.innerHTML = `
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="${project.id}-label">${project.title}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           ${project.details}
+                        </div>
+                    </div>
+                </div>`;
+        modalContainer.appendChild(modal);
+      });
+
+      // --- 4. ADVANCED SCROLL REVEAL ANIMATION ---
+      const revealElements = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      revealElements.forEach((el) => observer.observe(el));
+
+      // --- 5. NAVBAR ACTIVE LINK HIGHLIGHTING ---
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section, header");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // --- 6. FORM SUBMISSION SIMULATION ---
+      const contactForm = document.getElementById("contactForm");
+      const formFeedback = document.getElementById("form-feedback");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        formFeedback.innerHTML = `<span class="text-success">Executing... Message sent successfully! (Simulation)</span>`;
+        setTimeout(() => {
+          formFeedback.innerHTML = "";
+          contactForm.reset();
+        }, 3000);
+      });
+    });
+  </script>
 </body>
 
 </html>
